@@ -18,4 +18,22 @@ output:
 
 ## Loading the data
 
+```{r}
+library(tidyverse)
+data <- read_csv("raw_data/data.csv")
+data
+```
+
 ## An interesting plot
+
+```{r}
+library(ggplot2)
+
+ggplot(data, aes(x = TempC, y = VO2_ml_per_h, color = Sex)) +
+  geom_point() +
+  labs(x = "Temperature (C)", y = "VO2 (ml/h)", color = "Sex") +
+  theme_minimal()
+
+```
+
+
